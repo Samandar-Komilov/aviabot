@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-xyhob#+4$x(sgc#8d32xc(_um0r%7-7scx_9uzc17&bl9l2@19'
+SECRET_KEY = 'django-insecure-eq6ihjo)0y^n$8y27r#_&o^o27%*j8^6s%#ewer^isaiz6bh^4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'api',
 ]
 
 MIDDLEWARE = [
@@ -76,15 +75,10 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'avia_db',
-        'USER': 'postgres',
-        'PASSWORD': 'voidpointer',
-        'HOST': 'localhost',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
-AUTH_USER_MODEL = "api.CustomUser"
 
 
 # Password validation
