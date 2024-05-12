@@ -23,3 +23,14 @@ class NewsList(generics.ListAPIView):
      queryset = New.objects.all()
      serializer_class = NewsSerializer
      permission_classes = [permissions.AllowAny]
+
+
+class NewsDetail(APIView):
+     def get(self, request, pk):
+          try:
+               news = New.objects.get(pk=pk)
+               serializer = NewsSerializer(news)
+               permission_classes = [permissions.AllowAny]
+               return Response(serializer.data)
+          except news.DoesNotExist:
+               return Response(status=status.HTTP_404_NOT_FOUND)
