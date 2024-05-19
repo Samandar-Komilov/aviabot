@@ -12,6 +12,6 @@ class UserSerializer(serializers.ModelSerializer):
 class NewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = New
-        fields = ['id', 'title', 'image', 'subtitle', 'created_at']
+        fields = ['id', 'title', 'text', 'image', 'subtitle', 'created_at']
 
 
